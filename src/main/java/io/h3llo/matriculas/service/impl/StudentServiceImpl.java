@@ -1,6 +1,7 @@
 package io.h3llo.matriculas.service.impl;
 
 import io.h3llo.matriculas.model.Student;
+import io.h3llo.matriculas.repo.IGenericaRepo;
 import io.h3llo.matriculas.repo.IStudentRepo;
 import io.h3llo.matriculas.service.IStudentService;
 import lombok.RequiredArgsConstructor;
@@ -10,11 +11,18 @@ import java.util.List;
 
 @Service // ESTE ESTEREOTIPO O ANOTACIÓN GENERA UNA INSTANCIA O BEAN DE LA CLASE EN EL IOC CONTAINER E INDICA QUE ESTA CLASE TIENE LÓGICA DE NEGOCIO
 @RequiredArgsConstructor
-public class StudentServiceImpl implements IStudentService {
+public class StudentServiceImpl extends CRUDImpl<Student, Integer> implements IStudentService {
 
-    //@Autowired // ESTE ESTEREOTIPO O ANOTACIÓN BUSCA UNA INSTANCIA O BEAN DE LA CLASE EN EL IOC CONTAINER E INYECTA LA DEPENDENCIA
     private final IStudentRepo repo; // = new StudentRepo();
 
+    @Override
+    protected IGenericaRepo<Student, Integer> getRepo() {
+        return repo;
+    }
+
+
+
+    /*
     @Override
     public Student save(Student student) throws Exception {
         return repo.save(student);
@@ -41,9 +49,7 @@ public class StudentServiceImpl implements IStudentService {
         repo.deleteById(id);
 
     }
-
-
-
+    */
 
     /*
     public StudentServiceImpl(IStudentRepo repo) {

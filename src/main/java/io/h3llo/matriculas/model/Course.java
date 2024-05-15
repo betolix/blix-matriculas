@@ -15,7 +15,6 @@ public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Autoincremental (MySQL, SQLServer, PostgreSQL)
-
     @EqualsAndHashCode.Include
     private Integer id_course;
 
