@@ -11,24 +11,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Student {
+public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Autoincremental (MySQL, SQLServer, PostgreSQL)
-    @EqualsAndHashCode.Include
-    private Integer id_student;
 
-    @Column( nullable = false, length = 50)
+    @EqualsAndHashCode.Include
+    private Integer id_course;
+
+    @Column(nullable = false, length = 30)
     private String name;
 
-    @Column( nullable = false, length = 50)
-    private String lastname;
+    @Column(nullable = false, length = 5)
+    private String abbr;
 
-    @Column( nullable = false, length = 8)
-    private String dni;
-
-    @Column( nullable = false)
-    private int age;
-
+    @Column(nullable = false)
+    private boolean status;
 
 }
