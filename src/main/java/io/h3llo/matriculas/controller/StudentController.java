@@ -5,6 +5,7 @@ import io.h3llo.matriculas.dto.StudentDTO;
 import io.h3llo.matriculas.dto.StudentRecord;
 import io.h3llo.matriculas.model.Student;
 import io.h3llo.matriculas.service.IStudentService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
@@ -51,15 +52,14 @@ public class StudentController {
 
 
     @PostMapping
-    public ResponseEntity<StudentDTO> save(@RequestBody StudentDTO dto) throws Exception {
+    public ResponseEntity<StudentDTO> save(@Valid @RequestBody StudentDTO dto) throws Exception {
         Student obj =  service.save(modelMapper.map(dto, Student.class));
         return new ResponseEntity<>(convertToDto(obj), HttpStatus.CREATED);
     }
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<StudentDTO> update(@PathVariable("id") Integer id, @RequestBody StudentDTO dto) throws Exception {
-        // dto.setId_student(id);
+    public ResponseEntity<StudentDTO> update(@Valid @PathVariable("id") Integer id, @RequestBody StudentDTO dto) throws Exception {
         Student obj = service.update(convertToEntity(dto), id);
         return ResponseEntity.ok(convertToDto(obj));
     }
