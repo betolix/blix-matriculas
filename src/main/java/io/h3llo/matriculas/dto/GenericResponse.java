@@ -12,6 +12,7 @@ import java.util.List;
 public class GenericResponse<T> {
 
     // TEST
+    // TEST A
     private int status;
     private String message;
     private List<T> data;
