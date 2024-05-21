@@ -59,6 +59,7 @@ public class StudentController {
 
     @PutMapping("/{id}")
     public ResponseEntity<StudentDTO> update(@PathVariable("id") Integer id, @RequestBody StudentDTO dto) throws Exception {
+        // dto.setId_student(id);
         Student obj = service.update(convertToEntity(dto), id);
         return ResponseEntity.ok(convertToDto(obj));
     }
