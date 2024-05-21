@@ -11,6 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 public class GenericResponse<T> {
 
+    // TEST
     private int status;
     private String message;
     private List<T> data;
