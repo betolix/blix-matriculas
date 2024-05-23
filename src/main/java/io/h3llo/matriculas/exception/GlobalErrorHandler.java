@@ -3,6 +3,7 @@ package io.h3llo.matriculas.exception;
 import io.h3llo.matriculas.dto.GenericResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
@@ -16,10 +17,8 @@ public class GlobalErrorHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<GenericResponse<CustomErrorResponse>> handleAllException(ModelNotFoundException ex, WebRequest req){
-
         CustomErrorResponse errorResponse = new CustomErrorResponse(LocalDateTime.now(), ex.getMessage(), req.getDescription(false));
-
-        return new ResponseEntity<>(new GenericResponse<>(404, "error", Arrays.asList(errorResponse)), HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(new GenericResponse<>(500, "BACKEND ERROR", Arrays.asList(errorResponse)), HttpStatus.INTERNAL_SERVER_ERROR);
 
     }
 
@@ -28,4 +27,13 @@ public class GlobalErrorHandler {
         CustomErrorResponse errorResponse = new CustomErrorResponse(LocalDateTime.now(), ex.getMessage(), req.getDescription(false));
         return new ResponseEntity<>(new GenericResponse<>(404, "error", Arrays.asList(errorResponse)), HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<GenericResponse<CustomErrorResponse>> handleBadRequest(ModelNotFoundException ex, WebRequest req ) {
+        CustomErrorResponse errorResponse = new CustomErrorResponse(LocalDateTime.now(), ex.getMessage(), req.getDescription(false));
+        return new ResponseEntity<>(new GenericResponse<>(400, "error", Arrays.asList(errorResponse)), HttpStatus.BAD_REQUEST);
+    }
+
+
+
 }
