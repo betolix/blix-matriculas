@@ -19,7 +19,7 @@ public class StudentDTO {
     private Integer id_student;
 
     @Size(min = 2, max = 50)
-    private String name;
+    private String nameOfStudent;
 
     @Size(min = 2, max = 50)
     private String lastname;
