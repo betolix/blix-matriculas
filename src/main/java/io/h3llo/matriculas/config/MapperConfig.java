@@ -27,4 +27,19 @@ public class MapperConfig {
         return mapper;
     }
 
+    @Bean("courseMapper")
+    public ModelMapper courseMapper() {
+        return new ModelMapper();
+    }
+
+    @Bean("registrationDetailMapper")
+    public ModelMapper registrationDetailMapper() {
+        return new ModelMapper();
+    }
+
+    @Bean("defaultMapper")
+    public ModelMapper defaultMapper() {
+        return new ModelMapper();
+    }
+
 }

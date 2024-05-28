@@ -8,6 +8,7 @@ import io.h3llo.matriculas.service.IStudentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,8 @@ public class StudentController {
 
     //@Autowired // ESTE ESTEREOTIPO O ANOTACIÓN BUSCA UNA INSTANCIA O BEAN DE LA CLASE EN EL IOC CONTAINER E INYECTA LA DEPENDENCIA
     private final IStudentService service; // = new StudentService();
+
+    @Qualifier("studentMapper")
     private final ModelMapper modelMapper;
 
     @GetMapping
