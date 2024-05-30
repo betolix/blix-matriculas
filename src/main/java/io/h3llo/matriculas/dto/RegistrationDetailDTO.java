@@ -1,5 +1,8 @@
 package io.h3llo.matriculas.dto;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.h3llo.matriculas.model.Course;
 import io.h3llo.matriculas.model.Registration;
 import jakarta.persistence.*;
@@ -13,6 +16,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class RegistrationDetailDTO {
 
 
@@ -20,11 +24,12 @@ public class RegistrationDetailDTO {
 
     @NotNull
     @Min(1)
-    private Integer idCourse;
+    private CourseDTO course;
 
     @NotNull
     private String room;
 
-    @NotNull
-    private Registration registration;
+    //    @NotNull  //!!!!!
+    @JsonBackReference // ESTA ANOTACION ES PARA MAESTRO DETALLE NE EL JSON
+    private RegistrationDTO registration;
 }

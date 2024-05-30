@@ -31,7 +31,8 @@ public class Registration {
 
     //LISTA de "detalle de la matricula"
     @OneToMany(mappedBy = "registration", cascade = CascadeType.ALL)  // o sea el @ManyToOne de la table Registration Detail  EL ATRIBUTO QUE EN EL OTRO LADO SE ENLAZA CON ESTA TABLA
-    private List<RegistrationDetail> registration_detail_array;
+//    private List<RegistrationDetail> registration_detail_array;
+    private List<RegistrationDetail> details;
 
     @Column(nullable = false)
     private boolean status;
