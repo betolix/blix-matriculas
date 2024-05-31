@@ -21,8 +21,8 @@ public class StudentServiceImpl extends CRUDImpl<Student, Integer> implements IS
     }
 
 
-//    @Override
-//    public List<Student> findAllStudents() {
-//        return repo.findAllStudents();
-//    }
+    @Override
+    public List<Student> findByOrderByAgeAsc() {
+        return repo.findByOrderByAgeAsc();
+    }
 }

@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface IStudentService extends ICRUD<Student, Integer> {
 
-   // List<Student> findAllStudents();
+    List<Student> findByOrderByAgeAsc();
 
 }

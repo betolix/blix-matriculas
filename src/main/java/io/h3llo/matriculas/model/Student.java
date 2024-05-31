@@ -28,7 +28,7 @@ public class Student {
     private String dni;
 
     @Column( nullable = false)
-    private int age;
+    private Integer age;
 
 
 }

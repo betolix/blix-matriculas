@@ -7,6 +7,6 @@ import java.util.List;
 public interface IStudentRepo extends IGenericaRepo<Student, Integer> {
 
 
-    //List<Student> findAllStudents();
+    List<Student> findByOrderByAgeAsc();
 
 }
