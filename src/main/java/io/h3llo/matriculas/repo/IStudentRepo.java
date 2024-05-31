@@ -1,10 +1,12 @@
 package io.h3llo.matriculas.repo;
 
 import io.h3llo.matriculas.model.Student;
-import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
 
 public interface IStudentRepo extends IGenericaRepo<Student, Integer> {
 
 
+    //List<Student> findAllStudents();
 
 }

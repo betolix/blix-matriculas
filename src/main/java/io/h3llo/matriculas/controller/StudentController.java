@@ -74,6 +74,14 @@ public class StudentController {
         //return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    /////////////////////////////////   QUERIES     /////////////////////////////////
+
+//    @GetMapping("/find/asc")
+//    public ResponseEntity<GenericResponse<StudentDTO>> findAllStudents() throws Exception {
+//        List<StudentDTO> list = service.findAllStudents().stream().map(this::convertToDto).toList();
+//        return ResponseEntity.ok(new GenericResponse<>(200, "success", new ArrayList<>(list)));
+//    }
+
 
     ///////////////////////////////// AUXILIARY FUNCTIONS /////////////////////////////////
 

@@ -21,49 +21,8 @@ public class StudentServiceImpl extends CRUDImpl<Student, Integer> implements IS
     }
 
 
-
-    /*
-    @Override
-    public Student save(Student student) throws Exception {
-        return repo.save(student);
-    }
-
-    @Override
-    public Student update(Student student, Integer id) throws Exception {
-        student.setId_student(id);
-        return repo.save(student); // SE DIFERENCIA DEL CREATE PORQUE ESTE OBJETO TIENE UN PK Y EL CREATE NO
-    }
-
-    @Override
-    public List<Student> readAll() throws Exception {
-        return repo.findAll();
-    }
-
-    @Override
-    public Student readById(Integer id) throws Exception {
-        return repo.findById(id).orElse(new Student());
-    }
-
-    @Override
-    public void delete(Integer id) throws Exception {
-        repo.deleteById(id);
-
-    }
-    */
-
-    /*
-    public StudentServiceImpl(IStudentRepo repo) {
-        this.repo = repo;
-    }*/
-
-    /*
-    @Override
-    public Student saveAndValid (Student student){
-        if(student.getStudent_id() == 0){
-
-            return repo.save(student);
-        }else{
-            return new Student();
-        }
-    }*/
+//    @Override
+//    public List<Student> findAllStudents() {
+//        return repo.findAllStudents();
+//    }
 }
