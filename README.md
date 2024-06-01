@@ -10,7 +10,7 @@ Para ejecutar este proyecto es necesario crear una bd de nombre blix_matriculas 
 El esquema de BD es el siguiente:
 
 
- IMAGEN BD
+ ![image info](./src/main/resources/Screenshot.png)
 
  Los comandos para poblar las dos primaeras tablas de la vd son
 
