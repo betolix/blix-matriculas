@@ -82,3 +82,7 @@ Los JSON para poblar las tablas intermedias ( Maestro detalle ) son:
 El endpoint para la consulta 1 es 
 
 http://localhost:8080/students/weee
+
+El endpoint para la consulta 2 es
+
+http://localhost:8080/courses/query

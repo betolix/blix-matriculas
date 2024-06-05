@@ -1,8 +1,8 @@
 package io.h3llo.matriculas.controller;
 
 import io.h3llo.matriculas.dto.GenericResponse;
+import io.h3llo.matriculas.dto.QueryDTO;
 import io.h3llo.matriculas.dto.StudentDTO;
-import io.h3llo.matriculas.dto.StudentRecord;
 import io.h3llo.matriculas.model.Student;
 import io.h3llo.matriculas.service.IStudentService;
 import jakarta.validation.Valid;
@@ -82,6 +82,17 @@ public class StudentController {
         return ResponseEntity.ok(new GenericResponse<>(200, "success", new ArrayList<>(list)));
     }
 
+
+
+    /*
+    @GetMapping("/wooo")
+    public ResponseEntity<GenericResponse<QueryDTO>> getSudentsByCourse() throws Exception {
+        List<QueryDTO> list = service.getSudentsByCourse();
+
+        return ResponseEntity.ok(new GenericResponse<>(200, "success", new ArrayList<>(list)));
+//        return ResponseEntity.ok(new GenericResponse<>(200, "success", new ArrayList<>(list)));
+    }
+*/
 
 
 

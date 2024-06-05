@@ -1,5 +1,6 @@
 package io.h3llo.matriculas.controller;
 
+import io.h3llo.matriculas.dto.QueryDTO;
 import io.h3llo.matriculas.model.Course;
 import io.h3llo.matriculas.service.ICourseService;
 import lombok.RequiredArgsConstructor;
@@ -47,6 +48,13 @@ public class CourseController {
         service.delete(id);
         return ResponseEntity.noContent().build();
         //return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/query")
+    public ResponseEntity<List<QueryDTO>> callQuery() {
+        List<QueryDTO> list = service.callQuery();
+        return ResponseEntity.ok(list);
+
     }
 
 }

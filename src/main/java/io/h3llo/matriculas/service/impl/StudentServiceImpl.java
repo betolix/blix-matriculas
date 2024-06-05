@@ -1,10 +1,12 @@
 package io.h3llo.matriculas.service.impl;
 
+import io.h3llo.matriculas.dto.QueryDTO;
 import io.h3llo.matriculas.model.Student;
 import io.h3llo.matriculas.repo.IGenericaRepo;
 import io.h3llo.matriculas.repo.IStudentRepo;
 import io.h3llo.matriculas.service.IStudentService;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +16,7 @@ import java.util.List;
 public class StudentServiceImpl extends CRUDImpl<Student, Integer> implements IStudentService {
 
     private final IStudentRepo repo; // = new StudentRepo();
+    private final ModelMapper defaultMapper;
 
     @Override
     protected IGenericaRepo<Student, Integer> getRepo() {
@@ -25,4 +28,9 @@ public class StudentServiceImpl extends CRUDImpl<Student, Integer> implements IS
     public List<Student> findByOrderByAgeAsc() {
         return repo.findByOrderByAgeAsc();
     }
+
+
+
+
+
 }
