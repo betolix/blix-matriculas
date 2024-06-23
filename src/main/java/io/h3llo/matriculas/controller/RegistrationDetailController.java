@@ -25,7 +25,8 @@ public class RegistrationDetailController {
 
     private final IRegistrationDetailService service;
 
-    @Qualifier("registrationDetailMapper")
+
+    @Qualifier("defaultMapper")
     private final ModelMapper modelMapper;
 
     @GetMapping
@@ -79,3 +80,19 @@ public class RegistrationDetailController {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

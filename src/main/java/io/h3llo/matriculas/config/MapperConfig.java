@@ -37,6 +37,11 @@ public class MapperConfig {
         return new ModelMapper();
     }
 
+    @Bean("registrationMapper")
+    public ModelMapper registrationMapper() {
+        return new ModelMapper();
+    }
+
     @Bean("defaultMapper")
     public ModelMapper defaultMapper() {
         return new ModelMapper();
