@@ -12,7 +12,7 @@ El esquema de BD es el siguiente:
 
  ![image info](./src/main/resources/Screenshot.png)
 
- Los comandos para poblar las dos primaeras tablas de la vd son
+ Los comandos para poblar las dos primaeras tablas de la bd son
 
 INSERT INTO public.student VALUES (1, 42, '41481234', 'Lazo', 'Alberto');
 INSERT INTO public.student VALUES (2, 25, '12345678', 'Medina', 'Jaime');
